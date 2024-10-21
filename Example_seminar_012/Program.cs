@@ -1,6 +1,6 @@
 ﻿Console.Clear();
-int Num1 = Convert.ToInt32(Console.ReadLine());
-int Num2 = Convert.ToInt32(Console.ReadLine());
+int Num1 = ReadInt("Введите первое число: ");
+int Num2 = ReadInt("Введите второе число: ");
 
 void sqrt2(int a, int b)
 {
@@ -17,5 +17,10 @@ void sqrt2(int a, int b)
 
 sqrt2(Num1, Num2);
 
+int ReadInt(string massage)
+{
+    Console.Write(massage);
+    return Convert.ToInt32(Console.ReadLine());
+}
 
 
