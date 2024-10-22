@@ -1,18 +1,19 @@
 ﻿Console.Clear();
 
-
-int RandomInt(string massage)
+Console.WriteLine("Введите к-во цифр для сравнения");
+int num = Convert.ToInt32(Console.ReadLine());
+int i = 0;
+int max1 = -11;
+while (i < num)
 {
-    int i = 0;
-    int num = Convert.ToInt32(Console.ReadLine());
-    int [] arrey = new int[num];
-    while ( i < num)
+    Console.WriteLine("Введите " + (i + 1) + " цифру:");
+    int a1 = Convert.ToInt32(Console.ReadLine());
+    if (a1 > max1)
     {
-        arrey[i] = new Random().Next(1, 1000);
-        i++;
+        max1 = a1;
     }
-    return arrey[1];
-    massage = Console.Write("Введите к-во цифр для сравнения");
+    i++;
 }
+Console.WriteLine("Максимальная введенная цифра - " + max1);
 
-RandomInt();
+
