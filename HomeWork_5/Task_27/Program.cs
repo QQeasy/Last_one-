@@ -1,16 +1,16 @@
 ﻿Console.Clear();
-Console.Write($"Введите число для возведения в степень: ");
+Console.Write($"Введите число: ");
 int a1 = ReadInt();
-Console.Write($"Введите степень, в которую возвести число {a1}: ");
-int a2 = ReadInt();
-int powA1 = a1;
 
-for (int i = 1; i < a2; i++)
+int num1 = a1;
+int count = 0;
+while (num1 != 0)
 {
-    powA1 = powA1 * powA1;
+    count += num1%10;
+    num1 /= 10;
 }
 
-Console.WriteLine($"Число {a1} в степени {a2} равняется {powA1} ");
+Console.WriteLine($"Сумма цифр в числе {a1} равняется {count} ");
 
 //Методы 
 //Считывает число
