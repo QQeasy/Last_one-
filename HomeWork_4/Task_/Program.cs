@@ -9,28 +9,38 @@ while (n1 != 0)
     n1/=10;
     count++;
 }
-int a2 = 0;
-int b2 = a1;
-
 n1 = a1;
+int a2 = a1;
+int b2 = a1;
+int summ = 0;
 
-Console.WriteLine(count + " " + n1);
-for (int i = 0; i < count; i++)
-{   
-    a2 = a1%10;
-    a1 /= 10;
-    for (int j = count-1; j > i; j--)
+for (int i = 1; i < count/2 + 1; i++)
+{
+    a2 %= 10;
+    
+    for (int j = 0; j < count-i; j++)
     {
-        b2 = b2/10;
-        int n23 = b2%10;
-        Console.WriteLine(i + " " + a2 + " " + n23);
+        b2 /= 10;
     }
-    if (a2 == n23)
+    b2 %= 10;
+
+    //проверку сделать
+    if (a2 == b2)
     {
-        continue;
+        summ ++;
     }
-    else
-    b2 = n1;
+
+    Console.WriteLine(i + " " + a2 + " " + b2 + " " + count + " " + summ);  
+    n1 /=10;
+    a2 = n1;
+    b2 = a1;
 }
 
-
+if (summ == count/2)
+{
+    Console.WriteLine("Число " + a1 + " является палиндромом!");
+}
+else
+{
+    Console.WriteLine("Число " + a1 + " не является палиндромом!");
+}
