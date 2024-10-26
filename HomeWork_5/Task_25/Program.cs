@@ -1,12 +1,16 @@
 ﻿Console.Clear();
-Console.Write($"Введите количество элементов массива: ");
+Console.Write($"Введите число, которое хотите возвести в степень: ");
+int a1 = ReadInt();
+Console.Write($"Введите, в какую степень возвести число {a1}: ");
+int a2 = ReadInt();
 
+int powA1 = 1;
 
-int num1 = ReadInt();
-
-int[] numbers = new int[num1];
-
-FillArrey(numbers);
+for (int i = 0; i < a2; i++)
+{
+    powA1 *= a1;
+}
+Console.Write($"Число {a1} в степени {a2} ровняется {powA1}");
 
 //Методы 
 //Считывает число
