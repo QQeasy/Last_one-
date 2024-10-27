@@ -6,7 +6,7 @@ int num1 = a1;
 int count = 0;
 while (num1 != 0)
 {
-    count += num1%10;
+    count += num1 % 10;
     num1 /= 10;
 }
 
