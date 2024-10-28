@@ -8,27 +8,44 @@ FillArrey(arrey1);
 PrintArrey(arrey1);
 Console.WriteLine(" ");
 
-
-
-int[] Arrey(int[] arrey)
+//создаёт новый массив на основе введённого 
+//посредством суммирования первого и последнего элемента, второго и предпоследнего
+int[] NewArreySumm(int[] arrey)
 {
-
-    for (int i = 1; i < (arrey.Length+1)/2; i++)
+    int num1 = 0;
+    int num2 = 0;
+    if (arrey.Length % 2 == 0)
     {
-        if (arrey.Length%2 == 0)
-        {
-            int[] newArrey1 = new int[arrey.Length/2];
-        }
-        else
-        {
-            int[] newArrey1 = new int[arrey.Length/2+1];
-        }
-        newArrey1[i] = arrey[i]*arrey[(arrey.Length+1)-i];
+        num1 = arrey.Length / 2;
     }
-    return newArrey1;
-}
-PrintArrey(arrey1);
+    else
+    {
+        num2 = arrey.Length / 2 + 1;
+    }
+    int num3 = num1 + num2;
+    int[] arrey2 = new int[num3];
+    if (num3 % 2 == 0)
+    {
+        for (int i = 0; i < num3; i++)
+        {
+        arrey2[i] = arrey[i] + arrey[arrey.Length - i - 1]; 
+        }
+    }
+    else
+    {
+        for (int i = 0; i < num3; i++)
+        {
+        arrey2[i] = arrey[i] + arrey[arrey.Length - i - 1]; 
+        }
+        arrey2[num3-1] = arrey[arrey.Length-num3];
+    }
 
+    return arrey2;
+
+
+}
+
+PrintArrey(NewArreySumm(arrey1));
 
 
 
