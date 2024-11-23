@@ -1,24 +1,22 @@
 ﻿Console.Clear();
 
 Console.WriteLine($"Вводите значения k1, b1: ");
-int k1 = ReadNum();
-int b1 = ReadNum();
+double k1 = ReadNum();
+double b1 = ReadNum();
 Console.WriteLine($"Вводите значения k2, b2: ");
-int k2 = ReadNum();
-int b2 = ReadNum();
+double k2 = ReadNum();
+double b2 = ReadNum();
 
 Console.Write($"Для того, чтобы найти точку пересечения прямых y = {k1}*x + {b1} и y = {k2}*x + {b2} введите 'YES': ");
 string result = Console.ReadLine();
-float x = 0;
-float y = 0;
+double x = 0;
+double y = 0;
 if (result == "YES")
 {
     x = ((b2 - b1) / (k1 - k2));
-    y = x*k1 + b1;
+    y = (x * k1 + b1);
     Console.Write($"Точка пересечения прямых y = {k1}*x + {b1} и y = {k2}*x + {b2} - ({x}:{y}):");
 }
-
-
 int[] newArrey1(int[] arrey)
 {
     int[] newArrey = new int[arrey.Length];
@@ -69,6 +67,6 @@ int[] FillArrey(int[] arrey)
 //ввод чисел int
 int ReadNum()
 {
-    int i = Convert.ToInt32(Console.ReadLine());
-    return i;
+    return Convert.ToInt32(Console.ReadLine());
+
 }
