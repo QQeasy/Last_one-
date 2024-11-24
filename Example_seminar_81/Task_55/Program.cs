@@ -6,31 +6,24 @@ FillArrey(arrey1);
 PrintArrey(arrey1);
 Console.WriteLine();
 
-PrintSimpleArrey(FindAverJJJ(arrey1));
+PrintArrey(NewArrey(arrey1));
 
-
-
-float[] FindAverJJJ(int[,] arrey)
+int[,] NewArrey(int[,] arrey)
 
 {
-    float[] newArrey = new float[arrey.GetLength(1)];
-    float summJ = 0;
-
-    for (int j = 0; j < arrey.GetLength(1); j++)
+    int[,] newArrey = new int[arrey.GetLength(1), arrey.GetLength(0)];
+    for (int i = 0; i < arrey.GetLength(1); i++)
     {
-        for (int i = 0; i < arrey.GetLength(0); i++)
+        for (int j = 0; j < arrey.GetLength(0); j++)
         {
-            summJ += arrey[i, j];
-            newArrey[j] = summJ/arrey.GetLength(0);
+            newArrey[i, j] = arrey[j, i];
         }
-        
-        summJ = 0;
     }
     return newArrey;
 }
 
 
-void PrintSimpleArrey(float[] newArrey1)
+void PrintSimpleArrey(int[] newArrey1)
 {
     for (int i = 0; i < newArrey1.Length; i++)
     {
